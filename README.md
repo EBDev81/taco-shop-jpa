@@ -1,39 +1,105 @@
 # Taco Shop JPA
 
-## Descripción
-El proyecto Taco Shop JPA es una aplicación de gestión para una tienda de tacos, desarrollada en Java utilizando JPA (Java Persistence API) en el Bootcamp de Keepcoding. La aplicación permite gestionar pedidos, ingredientes y usuarios, ofreciendo una solución completa para la administración de una tienda de tacos.
+Este repositorio contiene un proyecto de Spring Boot para una aplicación de una tienda de tacos, utilizando JPA para las interacciones con la base de datos.
+
+## Estructura del Proyecto
+
+- **src/main/java**: Contiene el código principal de la aplicación.
+  - **com/taco/shop**: Paquete raíz de la aplicación.
+    - **controller**: Controladores REST.
+    - **model**: Clases de entidad que representan las tablas de la base de datos.
+    - **repository**: Repositorios de Spring Data JPA.
+    - **service**: Interfaces e implementaciones de la capa de servicio.
+    - **TacoShopApplication.java**: Clase principal de la aplicación Spring Boot.
+
+- **src/main/resources**: Contiene las propiedades de la aplicación y otros archivos de recursos.
+  - **application.properties**: Configuración de la aplicación.
+
+## Comenzando
+
+1. Clonar el repositorio:
+    ```sh
+    git clone https://github.com/EBDev81/taco-shop-jpa.git
+    cd taco-shop-jpa
+    ```
+
+2. Construir el proyecto:
+    ```sh
+    ./mvnw clean install
+    ```
+
+3. Ejecutar la aplicación:
+    ```sh
+    ./mvnw spring-boot:run
+    ```
+
+## Dependencias
+
+- Spring Boot Starter Data JPA
+- Spring Boot Starter Web
+- H2 Database
+- Lombok
 
 ## Características
-- **Gestión de Tacos:** CRUD completo (crear, leer, actualizar, eliminar) para los tacos.
-- **Gestión de Ingredientes:** CRUD completo para los ingredientes.
-- **Gestión de Pedidos:** Manejo de pedidos de tacos con integración de ingredientes.
-- **Gestión de Usuarios:** Registro y autenticación de usuarios.
-- **Persistencia de Datos:** Uso de JPA para la persistencia de datos en una base de datos relacional.
 
-## Tecnologías Utilizadas
-- **Lenguaje de Programación:** Java
-- **Framework:** Spring Boot
-- **Persistencia:** JPA/Hibernate
-- **Base de Datos:** H2 (por defecto, pero fácilmente configurable para otras bases de datos)
-- **Herramientas de Construcción:** Maven
+- API RESTful para gestionar pedidos de tacos
+- Integración con JPA para operaciones de base de datos
+- Base de datos en memoria H2 para desarrollo y pruebas
 
-## Instalación y Ejecución
-Sigue los siguientes pasos para configurar y ejecutar la aplicación localmente:
-Instrucciones:
-```bash
-1. Clona el repositorio:
-   git clone https://github.com/EBDev81/taco-shop-jpa.git
-2. Navega al directorio del proyecto: 
-  cd taco-shop-jpa/taco-shop-jpa
-3. Construye el proyecto usando Maven:
-  mvn clean install
-4. Ejecuta la aplicación:
-  http://localhost:8080
-```
-##Endpoints API
-- **GET /tacos:** Lista todos los tacos.
-- **POST /tacos:** Crea un nuevo taco.
-- **GET /tacos/{id}:** Obtiene los detalles de un taco específico.
-- **PUT /tacos/{id}:** Actualiza un taco existente.
-- **DELETE /tacos/{id}:** Elimina un taco.
+## Contacto
 
+Para más información, contacta al propietario del repositorio.
+
+## Uso
+
+La aplicación proporciona una API RESTful para gestionar pedidos de tacos. Para interactuar con la API, puedes utilizar herramientas como `curl`, Postman, o cualquier cliente HTTP.
+
+## Uso
+
+La aplicación proporciona una API RESTful para gestionar pedidos de tacos. Para interactuar con la API, puedes utilizar herramientas como Postman.
+
+### Ejemplos de Uso
+
+1. **Crear un nuevo pedido de tacos**:
+    - Método: POST
+    - URL: `http://localhost:8080/orders`
+    - Encabezados:
+        - `Content-Type: application/json`
+    - Cuerpo:
+        ```json
+        {
+            "tacoName": "Carnitas",
+            "quantity": 3,
+            "customerName": "John Doe",
+            "address": "123 Taco St",
+            "phoneNumber": "555-1234"
+        }
+        ```
+
+2. **Obtener todos los pedidos**:
+    - Método: GET
+    - URL: `http://localhost:8080/orders`
+
+3. **Obtener un pedido por ID**:
+    - Método: GET
+    - URL: `http://localhost:8080/orders/{id}`
+
+4. **Actualizar un pedido existente**:
+    - Método: PUT
+    - URL: `http://localhost:8080/orders/{id}`
+    - Encabezados:
+        - `Content-Type: application/json`
+    - Cuerpo:
+        ```json
+        {
+            "tacoName": "Carnitas",
+            "quantity": 5,
+            "customerName": "John Doe",
+            "address": "123 Taco St",
+            "phoneNumber": "555-1234"
+        }
+        ```
+
+5. **Eliminar un pedido**:
+    - Método: DELETE
+    - URL: `http://localhost:8080/orders/{id}`
