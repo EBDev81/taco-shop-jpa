@@ -1,7 +1,7 @@
 # Taco Shop JPA
 
 ## Descripción
-El proyecto Taco Shop JPA es una aplicación de gestión para una tienda de tacos, desarrollada en Java utilizando JPA (Java Persistence API). La aplicación permite gestionar pedidos, ingredientes y usuarios, ofreciendo una solución completa para la administración de una tienda de tacos.
+El proyecto Taco Shop JPA es una aplicación de gestión para una tienda de tacos, desarrollada en Java utilizando JPA (Java Persistence API) en el Bootcamp de Keepcoding. La aplicación permite gestionar pedidos, ingredientes y usuarios, ofreciendo una solución completa para la administración de una tienda de tacos.
 
 ## Características
 - **Gestión de Tacos:** CRUD completo (crear, leer, actualizar, eliminar) para los tacos.
